@@ -1,0 +1,26 @@
+<%- include("partials/header") -%>
+<div class="story shadow  mb-5 bg-white rounded">
+  <div class="compose">
+  <div id="post-heading">Compose</div>
+  <form action= "/Noah@123" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+          <div id="compose-part">Part</div>
+          <input type="text" class="form-control"name="partNumber" autocomplete="off">
+      </div>
+      <div class="form-group">
+          <div id="compose-part">Title</div>
+          <input type="text" class="form-control"name="title" autocomplete="off">
+      </div>
+      <div class="form-group">
+          <div id="compose-part">Post</div>
+          <textarea class="form-control"  rows="5" name="story"></textarea>
+      </div>
+      <div class="form-group">
+          <div id="compose-part">Add Image</div>
+          <input type="file" class="form-control-file" id="image" name="myFile"  >
+      </div>
+      <button type="submit" name="submit"  class="btn btn-primary" >Publish</button>
+  </form>
+  </div>
+</div>
+<%- include("partials/footer") -%>

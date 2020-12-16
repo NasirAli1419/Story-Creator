@@ -1,0 +1,32 @@
+<%- include("partials/header"); -%>
+<% var partCounter =0; %>
+<%parts.forEach(function(part){ %>
+  <div class="storyLine">
+  <div class="heading">
+  <span id="part-number">Part <%=part.part%></span>
+  </div>
+<section id="posts">
+
+<div class="row ">
+
+<%part.chapters.forEach(function(chapter){ %>
+  <div class="col-lg-3 col-md-6 col-sm-12">
+    <div class="card shadow  mb-5 bg-white rounded" style="width: 18rem;">
+      <img src="  data:<%=chapter.Image.contentType%>;base64,<%=chapter.Image.image.toString('base64')%>" class="post-image " alt="..."/>
+    <div class="card-body">
+      <div id="cardTitle"class="card-title"><%= chapter.title %></div>
+      <div id="card-data"class="card-text"><%= chapter.story.substring(0,99) %> ...</div>
+      <div id="read-more"><a  href="/posts/<%=part.part%>/<%=chapter.title%>"  class="linkText">Read More</a></div>
+    </div>
+  </div>
+  </div>
+<%}); %>
+</div>
+</section>
+</div>
+<% partCounter++;  %>
+<%  if(partCounter!=parts.length) {%>
+     <hr>
+  <%  } %>
+<%  }); %>
+<%- include("partials/footer"); -%>
